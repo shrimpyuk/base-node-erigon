@@ -16,9 +16,9 @@ FROM golang:1.19 as erigon
 
 WORKDIR /app
 
-ENV REPO=https://github.com/shrimpyuk/base-node-erigon
+ENV REPO=https://github.com/shrimpyuk/base-erigon
 ENV VERSION=v2.48.1-0.1.9-base
-ENV CHECKSUM=5a51ed37d453144b477bc4b4d9fbbdefedc758f0787be986e1ec4111a2a45df6
+ENV CHECKSUM=bf023c4844eed4a6bd9d003d9f979db7e9bf61415ec62946b274287def14221b
 ADD --checksum=sha256:$CHECKSUM $REPO/archive/$VERSION.tar.gz ./
 
 RUN tar -xvf ./$VERSION.tar.gz --strip-components=1 && \
