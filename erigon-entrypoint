@@ -40,7 +40,6 @@ exec ./erigon \
 	--authrpc.jwtsecret="$OP_NODE_L2_ENGINE_AUTH" \
 	--ws \
 	--ws.port="$WS_PORT" \
-	--ws.origins="*" \
 	--ws.api=debug,eth,txpool,net,engine \
 	--metrics \
 	--metrics.addr=0.0.0.0 \
