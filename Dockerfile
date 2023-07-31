@@ -18,7 +18,7 @@ WORKDIR /app
 
 ENV REPO=https://github.com/shrimpyuk/base-node-erigon
 ENV VERSION=v2.48.1-0.1.9-base
-ENV CHECKSUM=0273ea3226147ba5b04c1a6eff2d9da48e6bbff3a348b33fe13e7e34d88ba411
+ENV CHECKSUM=5a51ed37d453144b477bc4b4d9fbbdefedc758f0787be986e1ec4111a2a45df6
 ADD --checksum=sha256:$CHECKSUM $REPO/archive/$VERSION.tar.gz ./
 
 RUN tar -xvf ./$VERSION.tar.gz --strip-components=1 && \
