@@ -1,9 +1,9 @@
 #!/bin/bash
 set -eu
 
-# wait until local geth comes up (authed so will return 401 without token)
+# wait until local erigon comes up (authed so will return 401 without token)
 until [ "$(curl -s -w '%{http_code}' -o /dev/null "$OP_NODE_L2_ENGINE_RPC")" -eq 401 ]; do
-  echo "waiting for geth to be ready"
+  echo "waiting for erigon to be ready"
   sleep 5
 done
 

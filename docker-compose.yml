@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  geth: # this is Optimism's geth client
+  erigon: # this is Optimism's erigon client
     build: .
     ports:
       - 8545:8545       # RPC
@@ -9,7 +9,7 @@ services:
       - 30303:30303     # P2P TCP (currently unused)
       - 30303:30303/udp # P2P UDP (currently unused)
       - 7301:6060       # metrics
-    command: [ "sh", "./geth-entrypoint" ]
+    command: [ "sh", "./erigon-entrypoint" ]
     env_file:
       # select your network here:
 #      - .env.goerli
@@ -17,7 +17,7 @@ services:
   node:
     build: .
     depends_on:
-      - geth
+      - erigon
     ports:
       - 7545:8545     # RPC
       - 9222:9222     # P2P TCP
